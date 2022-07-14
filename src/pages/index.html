@@ -5,20 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
     <title>Simonizin</title>
+    <script
+      src="https://kit.fontawesome.com/5884324ade.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- navbar -->
     <div
-      class="fixed inset-x-0 w-4/5 mx-auto h-20 bg-white drop-shadow-xl flex items-center justify-between rounded-xl px-6 -mt-3"
+      class="fixed inset-x-0 w-4/5 mx-auto bg-white drop-shadow-xl md:flex md:items-center md:justify-between rounded-xl px-6 pt-8 md:pt-0 py-10"
     >
-      <a href="index.html" class="font-bold text-gray-700">
-        Informasi Proses Permohonan Anda
-      </a>
-      <div class="menu hidden md:block">
-        <a class="mx-2" href="index.html">Home</a>
-        <a class="mx-2" href="tracking.html">Tracking</a>
-        <a class="mx-2" href="#">Penggunaan</a>
-        <a class="mx-2" href="#">Tentang</a>
+      <div class="flex justify-between w-full">
+        <a href="index.html" class="font-bold text-gray-700 md:mt-10">
+          Informasi Proses Permohonan Anda
+        </a>
+
+        <button class="nav-btn-close hidden icon-close-nav">
+          <i class="fa-solid fa-xmark fa-lg"></i>
+        </button>
+        <button class="nav-btn-open md:hidden icon-open-nav">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </button>
+
+        <div class="menu hidden md:block md:mt-10">
+          <a class="mx-2" href="index.html">Home</a>
+          <a class="mx-2" href="tracking.html">Tracking</a>
+          <a class="mx-2 penggunaan-btn" href="#">Penggunaan</a>
+          <a class="mx-2 tentang" href="#">Tentang</a>
+        </div>
+      </div>
+      <div class="menu hidden mobile-nav">
+        <div class="flex flex-col">
+          <a class="my-2 mt-5 borbder-b-2" href="index.html">Home</a>
+          <a class="my-2 borbder-b-2" href="tracking.html">Tracking</a>
+          <a class="my-2 borbder-b-2 penggunaan-btn" href="#">Penggunaan</a>
+          <a class="my-2 borbder-b-2 tentang" href="#">Tentang</a>
+        </div>
       </div>
     </div>
     <!-- end navbar -->
@@ -28,7 +50,7 @@
       class="container mx-auto h-screen flex pt-24 flex-col md:flex-row md:justify-between items-center"
     >
       <div class="left md:ml-24 mx-10 md:mx-0">
-        <h1 class="font-bold text-5xl">Monitoring Penyelesaian Permohonan</h1>
+        <h1 class="font-bold text-4xl">Monitoring Penyelesaian Permohonan</h1>
         <h2 class="font-bold text-2xl mt-3">Lorem ipsum dolor sit amet</h2>
         <p class="mb-8 mt-2">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
@@ -46,8 +68,62 @@
     </div>
     <!-- end hero -->
 
+    <!-- modal -->
+    <div
+      class="absolute z-50 top-0 right-0 bottom-0 left-0 bg-gray-900/50 hidden penggunaan"
+    >
+      <div class="bg-white w-3/4 md:w-1/2 rounded-xl mx-auto p-10 mt-20">
+        <div class="border-b-2 pb-5 flex justify-between">
+          <p class="font-bold text-xl">Cara Menggunakan Aplikasi</p>
+          <button class="penggunaan-btn-close">
+            <i class="fa-solid fa-xmark fa-lg"></i>
+          </button>
+        </div>
+        <p class="mt-5">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat
+          consectetur laboriosam odio cum soluta eveniet unde quasi id itaque
+          reiciendis ipsam porro incidunt iure, officia velit voluptate
+          exercitationem fuga est.
+        </p>
+      </div>
+    </div>
+    <!-- end modal -->
+
     <!-- footer -->
     <footer class="absolute bottom-10 left-20">&copy; 2022 By Simonizin</footer>
     <!-- end footer -->
+
+    <script>
+      const penggunaan = document.querySelector(".penggunaan");
+      const btnPenggunaan = document.querySelector(".penggunaan-btn");
+      const closeBtnPenggunaan = document.querySelector(
+        ".penggunaan-btn-close"
+      );
+
+      btnPenggunaan.addEventListener("click", () => {
+        penggunaan.classList.remove("hidden");
+      });
+      closeBtnPenggunaan.addEventListener("click", () => {
+        penggunaan.classList.add("hidden");
+      });
+
+      const mobileNav = document.querySelector(".mobile-nav");
+      const btnOpen = document.querySelector(".nav-btn-open");
+      const btnClose = document.querySelector(".nav-btn-close");
+      const iconOpen = document.querySelector(".icon-open-nav");
+      const iconClose = document.querySelector(".icon-close-nav");
+
+      btnOpen.addEventListener("click", () => {
+        mobileNav.classList.remove("hidden");
+        iconOpen.classList.add("hidden");
+        iconClose.classList.remove("hidden");
+      });
+
+      btnClose.addEventListener("click", () => {
+        mobileNav.classList.add("hidden");
+        iconOpen.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>
