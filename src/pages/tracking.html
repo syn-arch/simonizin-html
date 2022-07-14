@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Simonizin</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div
+      class="fixed inset-x-0 w-4/5 mx-auto h-20 bg-white drop-shadow-xl flex items-center justify-between rounded-xl px-6 -mt-3"
+    >
+      <a href="/" class="font-bold text-gray-700">
+        Informasi Proses Permohonan Anda
+      </a>
+      <div class="menu hidden md:block">
+        <a class="mx-2" href="">Home</a>
+        <a class="mx-2" href="">Tracking</a>
+        <a class="mx-2" href="">Penggunaan</a>
+        <a class="mx-2" href="">Tentang</a>
+      </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- main -->
+    <div class="container text-center pt-24">
+      <h1 class="font-bold text-lg md:mt-20">
+        Monitoring Penyelesaian Permohonan
+      </h1>
+      <p class="md:w-1/2 mx-10 md:mx-auto mt-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+        recusandae exercitationem nulla molestias labore sit a mollitia
+        similique itaque minus sint unde nisi reprehenderit, placeat excepturi
+        perspiciatis temporibus, laudantium magnam?
+      </p>
+      <form action="" class="mt-5">
+        <input
+          type="text"
+          placeholder="Masukan ID Ticket Disini"
+          class="w-3/4 md:w-1/2 shadow-md py-3 px-5 rounded-lg outline-none block mx-auto"
+          name="id_ticket"
+        />
+        <div
+          class="flex justify-evenly w-3/4 md:w-1/2 mx-auto mt-5 flex-col md:flex-row"
+        >
+          <img
+            id="Imageid"
+            src="https://simonizin.dyatnas.my.id/assets/img/captcha/1657793624.4315.jpg"
+            class="inline-block"
+            alt=" "
+          />
+          <input
+            type="text"
+            class="shadow-md py-3 px-5 rounded-lg outline-none inline-block h-16 mt-5"
+            placeholder="Captcha"
+            name="captcha"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-purple-500 block mx-auto mt-10 text-white px-10 py-3 rounded-full shadow-lg hover:bg-purple-700 w-3/4 md:w-1/2"
+        >
+          SUBMIT
+        </button>
+      </form>
+    </div>
+
+    <!-- end main -->
+  </body>
+</html>
